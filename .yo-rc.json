@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "baseName": "DanceHours",
+    "packageName": "com.tartner.dancehours",
+    "packageFolder": "com/tartner/dancehours",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "82b8bfb62e02062b9749dd91eefd0408594c0f48",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ]
+  }
+}
