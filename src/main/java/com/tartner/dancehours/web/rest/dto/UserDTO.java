@@ -16,7 +16,7 @@ public class UserDTO {
     public static final int PASSWORD_MIN_LENGTH = 5;
     public static final int PASSWORD_MAX_LENGTH = 100;
 
-    @Pattern(regexp = "^[a-z0-9]*$")
+    @Email
     @NotNull
     @Size(min = 1, max = 50)
     private String login;
@@ -65,37 +65,14 @@ public class UserDTO {
         this.authorities = authorities;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public boolean isActivated() {
-        return activated;
-    }
-
-    public String getLangKey() {
-        return langKey;
-    }
-
-    public Set<String> getAuthorities() {
-        return authorities;
-    }
+    public String getPassword() { return password; }
+    public String getLogin() { return login; }
+    public String getFirstName() { return firstName; }
+    public String getLastName() { return lastName; }
+    public String getEmail() { return email; }
+    public boolean isActivated() { return activated; }
+    public String getLangKey() { return langKey; }
+    public Set<String> getAuthorities() { return authorities; }
 
     @Override
     public String toString() {

@@ -9,6 +9,17 @@ angular.module('danceHoursApp')
         $scope.registerAccount = {};
         $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
 
+        function invalidateForm() {
+            angular.forEach($scope.registerAccount.$error.required, function(field) {
+                field.$setDirty();
+            });
+        }
+
+        $scope.copyLoginToEmail = function() {
+            $scope.registerAccount.login = $scope.registerAccount.email;
+            invalidateForm();
+        }
+
         $scope.register = function () {
             if ($scope.registerAccount.password !== $scope.confirmPassword) {
                 $scope.doNotMatch = 'ERROR';

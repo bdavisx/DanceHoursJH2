@@ -85,6 +85,12 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<PersistentToken> persistentTokens = new HashSet<>();
 
+    public String getEmail() { return email; }
+    public void setEmail(String email) {
+        this.email = email;
+        setLogin(email);
+    }
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getLogin() { return login; }
@@ -95,8 +101,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public String getLastName() { return lastName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
     public boolean getActivated() { return activated; }
     public void setActivated(boolean activated) { this.activated = activated; }
     public String getActivationKey() { return activationKey; }
