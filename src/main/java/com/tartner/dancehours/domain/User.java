@@ -1,6 +1,7 @@
 package com.tartner.dancehours.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.common.base.MoreObjects;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.Email;
@@ -39,13 +40,17 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "password_hash",length = 60)
     private String password;
 
-    @Size(max = 50)
-    @Column(name = "first_name", length = 50)
-    private String firstName;
+    @Size(max = 250)
+    @Column(name = "full_name", length = 250)
+    private String fullName;
 
-    @Size(max = 50)
-    @Column(name = "last_name", length = 50)
-    private String lastName;
+//    @Size(max = 50)
+//    @Column(name = "first_name", length = 50)
+//    private String firstName;
+//
+//    @Size(max = 50)
+//    @Column(name = "last_name", length = 50)
+//    private String lastName;
 
     @Email
     @Size(max = 100)
@@ -97,10 +102,17 @@ public class User extends AbstractAuditingEntity implements Serializable {
     public void setLogin(String login) { this.login = login; }
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
-    public String getFirstName() { return firstName; }
-    public void setFirstName(String firstName) { this.firstName = firstName; }
-    public String getLastName() { return lastName; }
-    public void setLastName(String lastName) { this.lastName = lastName; }
+    public String getFullName() { return fullName; }
+    public void setFullName(String fullName) { this.fullName = fullName; }
+
+    public void setFullName(String firstName, String lastName) {
+        this.fullName = new StringBuilder(firstName).append(" ").append(lastName).toString();
+    }
+
+//    public String getFirstName() { return firstName; }
+//    public void setFirstName(String firstName) { this.firstName = firstName; }
+//    public String getLastName() { return lastName; }
+//    public void setLastName(String lastName) { this.lastName = lastName; }
     public boolean getActivated() { return activated; }
     public void setActivated(boolean activated) { this.activated = activated; }
     public String getActivationKey() { return activationKey; }
@@ -133,14 +145,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" +
-            "login='" + login + '\'' +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", email='" + email + '\'' +
-            ", activated='" + activated + '\'' +
-            ", langKey='" + langKey + '\'' +
-            ", activationKey='" + activationKey + '\'' +
-            "}";
+        return MoreObjects.toStringHelper(this).add("id", id).add("login", login).add("fullName", fullName).add
+            ("email", email).add("activated", activated).toString();
     }
 }

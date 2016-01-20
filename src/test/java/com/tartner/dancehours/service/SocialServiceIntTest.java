@@ -59,7 +59,8 @@ public class SocialServiceIntTest {
         MockitoAnnotations.initMocks(this);
         doNothing().when(mockMailService).sendSocialRegistrationValidationEmail(anyObject(), anyString());
         doNothing().when(mockConnectionRepository).addConnection(anyObject());
-        when(mockUsersConnectionRepository.createConnectionRepository(anyString())).thenReturn(mockConnectionRepository);
+        when(mockUsersConnectionRepository.createConnectionRepository(anyString())).thenReturn
+            (mockConnectionRepository);
 
         socialService = new SocialService();
         ReflectionTestUtils.setField(socialService, "authorityRepository", authorityRepository);
@@ -78,11 +79,7 @@ public class SocialServiceIntTest {
     @Test(expected = IllegalArgumentException.class)
     public void testCreateSocialUserShouldThrowExceptionIfConnectionHasNoEmailAndNoLogin() {
         // Setup
-        Connection<?> connection = createConnection("",
-            "",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("", "", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -91,15 +88,8 @@ public class SocialServiceIntTest {
     @Test(expected = IllegalArgumentException.class)
     public void testCreateSocialUserShouldThrowExceptionIfConnectionHasNoEmailAndLoginAlreadyExist() {
         // Setup
-        User user = createExistingUser("@LOGIN",
-            "mail@mail.com",
-            "OTHER_FIRST_NAME",
-            "OTHER_LAST_NAME");
-        Connection<?> connection = createConnection("@LOGIN",
-            "",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        User user = createExistingUser("@LOGIN", "mail@mail.com", "OTHER_FIRST_NAME", "OTHER_LAST_NAME");
+        Connection<?> connection = createConnection("@LOGIN", "", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -111,11 +101,7 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldCreateUserIfNotExist() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -131,19 +117,14 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldCreateUserWithSocialInformation() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
 
         //Verify
         User user = userRepository.findOneByEmail("mail@mail.com").get();
-        assertThat(user.getFirstName()).isEqualTo("FIRST_NAME");
-        assertThat(user.getLastName()).isEqualTo("LAST_NAME");
+        assertThat(user.getFullName()).isEqualTo("FIRST_NAME LAST_NAME");
 
         // Teardown
         userRepository.delete(user);
@@ -152,11 +133,7 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldCreateActivatedUserWithRoleUserAndPassword() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -175,11 +152,7 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldCreateUserWithExactLangKey() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -195,10 +168,7 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldCreateUserWithLoginSameAsEmailIfNotTwitter() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME",
             "PROVIDER_OTHER_THAN_TWITTER");
 
         // Exercise
@@ -215,11 +185,7 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldCreateUserWithSocialLoginWhenIsTwitter() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "twitter");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "twitter");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -235,11 +201,7 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldCreateSocialConnection() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -255,16 +217,9 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldNotCreateUserIfEmailAlreadyExist() {
         // Setup
-        User user = createExistingUser("@OTHER_LOGIN",
-            "mail@mail.com",
-            "OTHER_FIRST_NAME",
-            "OTHER_LAST_NAME");
+        User user = createExistingUser("@OTHER_LOGIN", "mail@mail.com", "OTHER_FIRST_NAME", "OTHER_LAST_NAME");
         long initialUserCount = userRepository.count();
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -281,15 +236,8 @@ public class SocialServiceIntTest {
     public void testCreateSocialUserShouldNotChangeUserIfEmailAlreadyExist() {
         // Setup
         long initialUserCount = userRepository.count();
-        User user = createExistingUser("@OTHER_LOGIN",
-            "mail@mail.com",
-            "OTHER_FIRST_NAME",
-            "OTHER_LAST_NAME");
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        User user = createExistingUser("@OTHER_LOGIN", "mail@mail.com", "OTHER_FIRST_NAME", "OTHER_LAST_NAME");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -297,8 +245,7 @@ public class SocialServiceIntTest {
         //Verify
         User userToVerify = userRepository.findOneByEmail("mail@mail.com").get();
         assertThat(userToVerify.getLogin()).isEqualTo("@OTHER_LOGIN");
-        assertThat(userToVerify.getFirstName()).isEqualTo("OTHER_FIRST_NAME");
-        assertThat(userToVerify.getLastName()).isEqualTo("OTHER_LAST_NAME");
+        assertThat(userToVerify.getFullName()).isEqualTo("OTHER_FIRST_NAME OTHER_LAST_NAME");
 
         // Teardown
         userRepository.delete(userToVerify);
@@ -307,11 +254,7 @@ public class SocialServiceIntTest {
     @Test
     public void testCreateSocialUserShouldSendRegistrationValidationEmail() {
         // Setup
-        Connection<?> connection = createConnection("@LOGIN",
-            "mail@mail.com",
-            "FIRST_NAME",
-            "LAST_NAME",
-            "PROVIDER");
+        Connection<?> connection = createConnection("@LOGIN", "mail@mail.com", "FIRST_NAME", "LAST_NAME", "PROVIDER");
 
         // Exercise
         socialService.createSocialUser(connection, "fr");
@@ -324,11 +267,8 @@ public class SocialServiceIntTest {
         userRepository.delete(userToDelete);
     }
 
-    private Connection<?> createConnection(String login,
-                                           String email,
-                                           String firstName,
-                                           String lastName,
-                                           String providerId) {
+    private Connection<?> createConnection(String login, String email, String firstName, String lastName,
+        String providerId) {
         UserProfile userProfile = mock(UserProfile.class);
         when(userProfile.getEmail()).thenReturn(email);
         when(userProfile.getUsername()).thenReturn(login);
@@ -343,16 +283,12 @@ public class SocialServiceIntTest {
         return connection;
     }
 
-    private User createExistingUser(String login,
-                                    String email,
-                                    String firstName,
-                                    String lastName) {
+    private User createExistingUser(String login, String email, String firstName, String lastName) {
         User user = new User();
         user.setLogin(login);
         user.setPassword(passwordEncoder.encode("password"));
         user.setEmail(email);
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
+        user.setFullName(firstName, lastName);
         return userRepository.saveAndFlush(user);
     }
 }

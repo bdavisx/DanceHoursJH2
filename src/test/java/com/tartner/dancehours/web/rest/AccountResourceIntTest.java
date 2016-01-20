@@ -114,8 +114,7 @@ public class AccountResourceIntTest {
 
         User user = new User();
         user.setLogin("test");
-        user.setFirstName("john");
-        user.setLastName("doe");
+        user.setFullName("john doe");
         user.setEmail("john.doe@jhipter.com");
         user.setAuthorities(authorities);
         when(mockUserService.getUserWithAuthorities()).thenReturn(user);
@@ -125,8 +124,7 @@ public class AccountResourceIntTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.login").value("test"))
-                .andExpect(jsonPath("$.firstName").value("john"))
-                .andExpect(jsonPath("$.lastName").value("doe"))
+                .andExpect(jsonPath("$.fullName").value("john doe"))
                 .andExpect(jsonPath("$.email").value("john.doe@jhipter.com"))
                 .andExpect(jsonPath("$.authorities").value(AuthoritiesConstants.ADMIN));
     }
@@ -146,8 +144,7 @@ public class AccountResourceIntTest {
         UserDTO u = new UserDTO(
             "joe",                  // login
             "password",             // password
-            "Joe",                  // firstName
-            "Shmoe",                // lastName
+            "Joe Schmoe",                  // fullName
             "joe@example.com",      // e-mail
             true,                   // activated
             "en",                   // langKey
@@ -170,8 +167,7 @@ public class AccountResourceIntTest {
         UserDTO u = new UserDTO(
             "funky-log!n",          // login <-- invalid
             "password",             // password
-            "Funky",                // firstName
-            "One",                  // lastName
+            "Funky One",                // fullName
             "funky@example.com",    // e-mail
             true,                   // activated
             "en",                   // langKey
@@ -194,8 +190,7 @@ public class AccountResourceIntTest {
         UserDTO u = new UserDTO(
             "bob",              // login
             "password",         // password
-            "Bob",              // firstName
-            "Green",            // lastName
+            "Bob Green",              // fullName
             "invalid",          // e-mail <-- invalid
             true,               // activated
             "en",               // langKey
@@ -219,8 +214,7 @@ public class AccountResourceIntTest {
         UserDTO u = new UserDTO(
             "alice",                // login
             "password",             // password
-            "Alice",                // firstName
-            "Something",            // lastName
+            "Alice Something",                // fullName
             "alice@example.com",    // e-mail
             true,                   // activated
             "en",                   // langKey
@@ -228,8 +222,8 @@ public class AccountResourceIntTest {
         );
 
         // Duplicate login, different e-mail
-        UserDTO dup = new UserDTO(u.getLogin(), u.getPassword(), u.getLogin(), u.getLastName(),
-            "alicejr@example.com", true, u.getLangKey(), u.getAuthorities());
+        UserDTO dup = new UserDTO(u.getLogin(), u.getPassword(), u.getFullName(), "alicejr@example.com", true, u
+            .getLangKey(), u.getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -256,8 +250,7 @@ public class AccountResourceIntTest {
         UserDTO u = new UserDTO(
             "john",                 // login
             "password",             // password
-            "John",                 // firstName
-            "Doe",                  // lastName
+            "John Doe",                 // fullName
             "john@example.com",     // e-mail
             true,                   // activated
             "en",                   // langKey
@@ -265,8 +258,8 @@ public class AccountResourceIntTest {
         );
 
         // Duplicate e-mail, different login
-        UserDTO dup = new UserDTO("johnjr", u.getPassword(), u.getLogin(), u.getLastName(),
-            u.getEmail(), true, u.getLangKey(), u.getAuthorities());
+        UserDTO dup = new UserDTO("johnjr", u.getPassword(), u.getFullName(), u.getEmail(), true, u.getLangKey(), u
+            .getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -292,8 +285,7 @@ public class AccountResourceIntTest {
         UserDTO u = new UserDTO(
             "badguy",               // login
             "password",             // password
-            "Bad",                  // firstName
-            "Guy",                  // lastName
+            "Bad Guy",                  // fullName
             "badguy@example.com",   // e-mail
             true,                   // activated
             "en",                   // langKey

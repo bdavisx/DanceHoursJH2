@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="bill (generated)" id="1449881447965-1">
+      <addColumn tableName="jhi_user">
+         <column name="full_name" type="varchar(250)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="bill (generated)" id="1449881447965-2">
+      <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
+   </changeSet>
+   <changeSet author="bill (generated)" id="1449881447965-3">
+      <dropSequence sequenceName="jhi_social_user_connection_id_seq"/>
+   </changeSet>
+   <changeSet author="bill (generated)" id="1449881447965-4">
+      <dropSequence sequenceName="jhi_user_id_seq"/>
+   </changeSet>
+   <changeSet author="bill (generated)" id="1449881447965-5">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_provider_use_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+   <changeSet author="bill (generated)" id="1449881447965-6">
+      <dropUniqueConstraint constraintName="jhi_social_user_connection_user_id_provider_id_rank_key"
+                            tableName="jhi_social_user_connection"/>
+   </changeSet>
+   <changeSet author="bill (generated)" id="1449881447965-7">
+      <dropColumn columnName="first_name" tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="bill (generated)" id="1449881447965-8">
+      <dropColumn columnName="last_name" tableName="jhi_user"/>
+   </changeSet>
+</databaseChangeLog>
