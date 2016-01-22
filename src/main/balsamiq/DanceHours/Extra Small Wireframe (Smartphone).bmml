@@ -1,0 +1,194 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="1280" measuredH="1213" mockupW="1280" mockupH="1173">
+  <controls>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::StickyNote" x="0" y="128" w="320" h="320" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>This%20is%20an%20example%20template%20using%20the%20iPhone%20control%20with%20the%20container%20symbol%20for%20smartphones%3A%0A%20%0A%20%20*_bs-grid-xs_*%0A%20%0AYou%20can%20toggle%20the%20grid%20columns%20on/off%20by%20showing%20or%20hiding%20markup%20with%20CTRL+K%20%28CMD+K%20on%20Mac%29.%0A%20%0AThe%20containers%20are%20locked.%20Right%20click%20to%20unlock%20them.%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="__group__" x="38" y="40" w="282" h="573" measuredW="282" measuredH="573" zOrder="0" locked="true" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="7">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="7">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="8" controlTypeID="__group__" x="358" y="40" w="282" h="573" measuredW="282" measuredH="573" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="8">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="8">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="9" controlTypeID="__group__" x="678" y="40" w="282" h="573" measuredW="282" measuredH="573" zOrder="2" locked="true" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="9">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="9">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="10" controlTypeID="__group__" x="998" y="40" w="282" h="573" measuredW="282" measuredH="573" zOrder="3" locked="true" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="10">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="10">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="11" controlTypeID="__group__" x="38" y="640" w="282" h="573" measuredW="282" measuredH="573" zOrder="4" locked="true" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="11">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="11">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="12" controlTypeID="__group__" x="358" y="640" w="282" h="573" measuredW="282" measuredH="573" zOrder="5" locked="true" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="12">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="12">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="13" controlTypeID="__group__" x="678" y="640" w="282" h="573" measuredW="282" measuredH="573" zOrder="6" locked="true" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="13">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="13">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="14" controlTypeID="__group__" x="998" y="640" w="282" h="573" measuredW="282" measuredH="573" zOrder="7" locked="true" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="0" w="-1" h="-1" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="14">
+          <controlProperties>
+            <bgPattern>allWhite</bgPattern>
+            <model>IPhone5</model>
+            <topBar>false</topBar>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Component" x="28" y="83" w="150" h="150" measuredW="150" measuredH="150" zOrder="1" locked="false" isInGroup="14">
+          <controlProperties>
+            <override controlID="0" x="19" y="1" w="45" h="401"/>
+            <override controlID="19" x="89" y="1" w="45" h="401"/>
+            <override controlID="20" x="159" y="1" w="45" h="401"/>
+            <override controlID="21" x="71" y="1" w="10" h="401"/>
+            <override controlID="22" x="141" y="1" w="10" h="401"/>
+            <override controlID="26" x="0" y="0" w="226" h="403"/>
+            <override controlID="27" x="0" y="0" w="226" h="403"/>
+            <src>./assets/Bootstrap%20Grid.bmml#bs-grid-xxs</src>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
