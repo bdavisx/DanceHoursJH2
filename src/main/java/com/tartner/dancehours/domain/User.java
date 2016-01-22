@@ -16,9 +16,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.time.ZonedDateTime;
 
-/**
- * A user.
- */
 @Entity
 @Table(name = "jhi_user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -43,14 +40,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Size(max = 250)
     @Column(name = "full_name", length = 250)
     private String fullName;
-
-//    @Size(max = 50)
-//    @Column(name = "first_name", length = 50)
-//    private String firstName;
-//
-//    @Size(max = 50)
-//    @Column(name = "last_name", length = 50)
-//    private String lastName;
 
     @Email
     @Size(max = 100)
